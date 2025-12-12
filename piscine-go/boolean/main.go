@@ -1,0 +1,29 @@
+package main
+
+import (
+	"os"
+
+	"github.com/01-edu/z01"
+)
+
+func printStr(s string) {
+	for _, r := range s {
+		z01.PrintRune(r)
+	}
+	z01.PrintRune('\n')
+}
+
+// Check if number is even
+func isEven(nbr int) bool {
+	return nbr%2 == 0
+}
+
+func main() {
+	args := os.Args[1:] // get command-line arguments (excluding program name)
+
+	if isEven(len(args)) {
+		printStr("I have an even number of arguments")
+	} else {
+		printStr("I have an odd number of arguments")
+	}
+}
